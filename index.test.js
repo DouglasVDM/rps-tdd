@@ -1,4 +1,6 @@
-const rps = () => { };
+const rps = () => {
+    return "left";
+};
 
 describe("rock, paper, scissors", () => {
     it("should say left wins for rock vs. scissors", () => {
