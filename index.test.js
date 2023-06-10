@@ -1,5 +1,5 @@
 const rps = () => {
-    return "left";
+    return left === "rock" ? "left" : "right";
 };
 
 describe("rock, paper, scissors", () => {
