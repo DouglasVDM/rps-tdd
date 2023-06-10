@@ -1,7 +1,10 @@
 const rps = (left, right) => {
+    if (left === right){
+        return "draw";
+    }
     return (
-        (left === "rock" && right==="scissors")
-        || (left==="scissors"&&right === "paper")
+        (left === "rock" && right === "scissors")
+        || (left === "scissors" && right === "paper")
         || (left === "paper" && right === "rock")
     )
         ? "left"
@@ -63,7 +66,9 @@ describe("rock, paper, scissors", () => {
         expect(result).toBe("right");
     });
 
-    ["rock","paper","scissors"].forEach((both)=>{
-        
+    ["rock", "paper", "scissors"].forEach((both) => {
+        it(`should sat draw for ${both} vs. ${both}`, () => {
+            expect(rps(both, both)).toBe("draw");
+        });
     });
 });
