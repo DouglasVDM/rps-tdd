@@ -62,4 +62,8 @@ describe("rock, paper, scissors", () => {
 
         expect(result).toBe("right");
     });
+
+    ["rock","paper","scissors"].forEach((both)=>{
+        
+    });
 });
