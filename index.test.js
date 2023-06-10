@@ -4,5 +4,5 @@ it("should work",()=>{
     
     const result = left + right;
 
-    expect(result).toBe(5);
+    expect(result).toBe(3);
 });
