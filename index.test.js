@@ -104,6 +104,26 @@ describe("Rock, Paper, Scissors, Lizard, Spock", () => {
     expect(outcome).toBe("right");
   });
 
+  // TEST 9
+  it("should say left wins for spock vs. rock", () => {
+    const left = "spock";
+    const right = "rock";
+
+    const outcome = rps(left, right);
+
+    expect(outcome).toBe("left");
+  });
+
+  // TEST 10
+  it("should say right wins for rock vs. spock", () => {
+    const left = "rock";
+    const right = "spock";
+
+    const outcome = rps(left, right);
+
+    expect(outcome).toBe("right");
+  });
+
   ["rock", "paper", "scissors", "lizard", "spock"].forEach((both) => {
     it(`should say draw for ${both} vs. ${both}`, () => {
       expect(rps(both, both)).toBe("draw");
