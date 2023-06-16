@@ -124,6 +124,66 @@ describe("Rock, Paper, Scissors, Lizard, Spock", () => {
     expect(outcome).toBe("right");
   });
 
+  // TEST 11
+  it("should say left wins for spock vs. scissors", () => {
+    const left = "spock";
+    const right = "scissors";
+  
+    const outcome = rps(left, right);
+  
+    expect(outcome).toBe("left");
+  });
+  
+  // TEST 12
+  it("should say right wins for scissors vs. spock", () => {
+    const left = "scissors";
+    const right = "spock";
+  
+    const outcome = rps(left, right);
+  
+    expect(outcome).toBe("right");
+  });
+  
+  // TEST 13
+  it("should say right wins for spock vs. paper", () => {
+    const left = "spock";
+    const right = "paper";
+  
+    const outcome = rps(left, right);
+  
+    expect(outcome).toBe("right");
+  });
+  
+  // TEST 14
+  it("should say left wins for paper vs. spock", () => {
+    const left = "paper";
+    const right = "spock";
+  
+    const outcome = rps(left, right);
+  
+    expect(outcome).toBe("left");
+  });
+  
+  // TEST 15
+  it("should say right wins for spock vs. lizard", () => {
+    const left = "spock";
+    const right = "lizard";
+  
+    const outcome = rps(left, right);
+  
+    expect(outcome).toBe("right");
+  });
+  
+  // TEST 16
+  it("should say leftt wins for lizard vs. spock", () => {
+    const left = "lizard";
+    const right = "spock";
+  
+    const outcome = rps(left, right);
+  
+    expect(outcome).toBe("left");
+  });
+  
   ["rock", "paper", "scissors", "lizard", "spock"].forEach((both) => {
     it(`should say draw for ${both} vs. ${both}`, () => {
       expect(rps(both, both)).toBe("draw");
