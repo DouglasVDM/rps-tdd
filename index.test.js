@@ -184,6 +184,14 @@ describe("Rock, Paper, Scissors, Lizard, Spock", () => {
     expect(outcome).toBe("left");
   });
   
+  // TEST 17
+  it("should throw an error for unrecognized shape", () => {
+    const left = "bananas";
+    const right = 123;
+
+    expect(() => rps(left, right)).toThrow("Invalid input: unrecognized shape");
+  });
+  
   ["rock", "paper", "scissors", "lizard", "spock"].forEach((both) => {
     it(`should say draw for ${both} vs. ${both}`, () => {
       expect(rps(both, both)).toBe("draw");
