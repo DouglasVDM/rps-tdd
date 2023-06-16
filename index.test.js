@@ -10,17 +10,21 @@ const rps = (left, right) => {
   if (left === right) {
     return "draw";
   }
-
+  // Check if the outcome represented by "left" can beat the outcome represented by "right".
+  // If it can, return "left"; otherwise, return "right".
   if (outcomes[left].beats.includes(right)) {
+    // If the outcome represented by "left" has a list that includes the outcome represented by "right",
+    // then the outcome represented by "left" wins
     return "left";
   } else {
+    // If the outcome represented by "left" does not have "right" in its list of outcomes it can beat,
+    // then the outcome represented by "left" cannot beat the outcome represented by "right"
     return "right";
   }
 };
 
 describe("Rock, Paper, Scissors, Lizard, Spock", () => {
-  
-    // TEST 1
+  // TEST 1
   it("should say left wins for rock vs. scissors", () => {
     const left = "rock";
     const right = "scissors";
@@ -90,7 +94,17 @@ describe("Rock, Paper, Scissors, Lizard, Spock", () => {
     expect(outcome).toBe("left");
   });
 
-   ["rock", "paper", "scissors", "lizard", "spock"].forEach((both) => {
+  // TEST 8
+  it("should say right wins for lizard vs. rock", () => {
+    const left = "lizard";
+    const right = "rock";
+
+    const outcome = rps(left, right);
+
+    expect(outcome).toBe("right");
+  });
+
+  ["rock", "paper", "scissors", "lizard", "spock"].forEach((both) => {
     it(`should say draw for ${both} vs. ${both}`, () => {
       expect(rps(both, both)).toBe("draw");
     });
