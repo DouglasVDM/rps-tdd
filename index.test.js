@@ -7,6 +7,13 @@ const rps = (left, right) => {
     spock: { beats: ["rock", "scissors"] },
   };
 
+  /* the function checks if the left and right shapes exist as properties in the outcomes object using hasOwnProperty.
+  If either shape is unrecognized, it throws an Error with the message "Invalid input: unrecognized shape." This prevents the unrecognized shapes from being used to access the beats property, eliminating the error encountered during previous testing.
+  */
+  if (!outcomes.hasOwnProperty(left) || !outcomes.hasOwnProperty(right)) {
+    throw new Error("Invalid input: unrecognized shape");
+  }
+
   if (left === right) {
     return "draw";
   }
@@ -87,11 +94,13 @@ describe("Rock, Paper, Scissors, Lizard, Spock", () => {
       });
   });
 
-  // // Additional test for unrecognized shape
-  // it("should throw an error for unrecognized shape", () => {
-  //   const left = "bananas";
-  //   const right = 123;
+  // Additional test for unrecognized shape
+  it("should throw an error for unrecognized shape", () => {
+    const left = "bananas";
+    const right = 123;
 
-  //   expect(() => rps(left, right)).toThrowError("Invalid input: unrecognized shape");
-  // });
+    expect(() => rps(left, right)).toThrowError(
+      "Invalid input: unrecognized shape"
+    );
+  });
 });
